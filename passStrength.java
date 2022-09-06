@@ -67,7 +67,28 @@ public class passStrength{
         }
         else{
             System.out.println("The password you entered does not adhere to the secure password standard \nMake sure that the password is at least 8 Characters long, Contains both upper case and lower case letters \nIt also needs to contain special symbols");  
-         
+        }
+        Boolean anotha = false;
+        Scanner thisInput = new Scanner(System.in);
+        while(anotha = true){
+            System.out.print("Do you want to enter another password? (y/n): ");
+            String reInput = thisInput.nextLine();
+            if(reInput.equals("y")){
+                getInput();
+                if(checkLength(false).equals(true) && checkAll(false).equals(true)){
+                    System.out.println("The password you entered is strong!");
+                }
+                else{
+                    System.out.println("The password you entered does not adhere to the secure password standard \nMake sure that the password is at least 8 Characters long, Contains both upper case and lower case letters \nIt also needs to contain special symbols");  
+                }
+
+            }
+            else{
+                anotha = false;
+                System.out.println("Thanks for using the program!");
+                break;
+            }
+
         }
     }
 }
